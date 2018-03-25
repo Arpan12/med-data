@@ -1,0 +1,123 @@
+<html>
+<head>
+<!-- title-->
+    <title>{% block title%}{% endblock %}</title>
+<!-- bootstrap links-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--included the google fonts here-->
+
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+<!--included the baseTemplate_style.css file  here we can add all our css file-->
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'PatientPage/BaseTemplate_style.css' %}"/>
+    
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  {% block cssblock %} {% endblock %}
+</head>
+<body>
+
+<!-- the top navigation bar-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+
+
+
+
+           <!--the side menu toggle button-->
+
+         <ul class="nav navbar-nav" id="sideMenuToggle">
+            <li><a  href="" aria-hidden="true"  id="menu-toggle">
+	         <span class="glyphicon glyphicon-list"></span>
+                </a>
+            </li>
+        </ul>
+
+
+
+        <!-- click the logo will redirect to homepage-->
+        <div class="navbar-header">
+
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+             <span class = "icon-bar"></span>
+             <span class = "icon-bar"></span>
+             <span class = "icon-bar"></span>
+
+
+         </button>
+            <a href="#" class="navbar-brand">Medix</a>
+
+        </div>
+
+        <!--menu items-->
+
+
+
+
+
+<div class="collapse navbar-collapse" id="topNavBar">
+        <!--the first menu item-->
+        <ul class="nav navbar-nav" >
+            <li><a  href="#" aria-hidden="true" >menu</a></li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Treatment <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" > Current treatment</a></li>
+                    <li><a href="#" > Add New Treatment</a></li>
+                    <li><a href="#" >Set an Appointment </a></li>
+                    <li><a href="#" > menu</a></li>
+
+                </ul>
+
+
+
+            </li>
+        </ul>
+
+        <!--the search bar-->
+        <form class = "navbar-form navbar-left" role="search" method="get" action="#" >
+
+            <div class="form-group">
+                <input class="form-control" type="text" name="query" value="">
+            </div>
+            <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </form>
+
+
+        <!--menu item to the right end of nav bar-->
+         <ul class="nav navbar-nav navbar-right">
+
+              <li><a href="#">
+                  <span class="glyphicon glyphicon-globe"></span>
+                 Forum
+             </a></li>
+
+             <li><a  href="#" aria-hidden="true" >
+                <span class="glyphicon glyphicon-off"></span>
+                Log out
+            </a></li>
+
+
+        </ul>
+
+
+</div>
+    </div>
+</nav>
+
+
+
+
+<!--the body text goes here-->
+{% block body%}{% endblock %}
+</body>
+</html>

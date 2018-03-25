@@ -1,0 +1,88 @@
+{% extends 'PatientPage/base_template.html' %}
+{% block title%}{% endblock %}
+
+{% block body%}
+
+
+        <!-- the sideMenu bar-->
+
+
+
+<div id="wrapper">
+          <div class="container-fluid">
+           <div class="row">
+
+                  <div class="col-lg-3">
+
+
+                   <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+
+            <li>
+                <div id="profilePic">
+                    <a type="button" id="updateProfile"  href = ""  class="btn btn-default">
+                        Update your Profile Picture
+                    </a>
+                </div>
+            </li>
+            <li><a href = "#">General Info</a></li>
+            <li><a href = "#">Othalmo</a></li>
+            <li><a href = "#">Ent</a></li>
+            <li><a href = "#">Eyes</a></li>
+            <li><a href = "#">Chest</a></li>
+            <li><a href = "#">Cardio</a></li>
+            <li><a href = "#">Gastro</a></li>
+            <li><a href = "#">Orthopedic</a></li>
+            <li><a href = "#">Skin</a></li>
+            <li><a href = "#">Neuro</a></li>
+        </ul>
+    </div>
+           </div>
+
+
+
+            <div class="col-lg-8 ">
+ <!--            <div id="page-content-wrapper">
+                
+                 <div class="container-fluid">                
+                <p>Welcome<br/> </p>
+               </div>
+        </div>
+
+-->
+          <div id="content-wrapper">
+        {%block content%}{%endblock%}
+          </div>
+          </div>
+    <!--sidebar-->
+        
+
+
+
+
+</div>
+    </div>
+    </div>
+
+    <script>
+    $('#sideMenuToggle').click(function (e) {
+        e.preventDefault();
+        $('#wrapper').toggleClass("DisplayMenu");
+    });
+  /* $(function() {
+   $("li").click(function() {
+      // remove classes from all
+      $("li").removeClass("active");
+      // add class to the one we clicked
+      $(this).addClass("active");
+   });*/
+
+
+    </script>
+
+
+
+
+
+
+{% endblock %}

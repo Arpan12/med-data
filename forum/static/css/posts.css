@@ -1,0 +1,29 @@
+
+#what{
+background-color: blue
+margin:200px;
+}
+
+#kyun {
+width:40px;
+}
+
+#btn-txt{
+	margin-top:20px;
+
+}
+
+#post-txtbox{
+
+	width:450px;
+	height:450px;
+    margin-top:20px; 
+}
+#post-bg{
+	background-color:#fafafa;
+	width=110%;
+}
+
+.answer-txtbox{
+	width:450px;
+}

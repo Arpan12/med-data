@@ -1,0 +1,30 @@
+{% load i18n %}
+  <div class='row'>
+  <div class="col-md-6 col-md-offset-1" id="post-bg">
+  <h3>{{post.post}}</h3>
+  <button type='button' class="btn btn-primary">
+  <span class='glyphicon glyphicon-pencil'>Answer</span>
+  </button>
+   <button type='button' class="btn">follow </button>
+  <form method='POST' action='#'>
+  <textarea class="answer-txtbox"></textarea>
+  </form>
+  {%for answer in post.answers_set.all|dictsortreversed:"upvotes.count"|slice:":2"  %}
+  <p>Answered by {{answer.user}} <br>
+  {{answer.answer}}<br>
+  {% if user not in answer.upvotes.all%}
+  <button type='button' class="btn btn-primary" id="upvote-btn{{forloop.counter}}" answer_id='{{answer.id}}' user='{{user}}' state="0" upvotes="{{answer.upvotes.count}}">
+  <span class='glyphicon glyphicon-pencil' id = "button-txt">Upvote|{{answer.upvotes.count}}</span>
+  </button>
+  {%else%}
+    <button type='button' class="btn btn-primary" id="upvote-btn{{forloop.counter}}" answer_id='{{answer.id}}' user='{{user}}' state="1" upvotes="{{answer.upvotes.count}}" >
+  <span class='glyphicon glyphicon-pencil' id = "button-txt">Upvoted|{{answer.upvotes.count}}</span>
+  </button>
+  {%endif%}
+  <br><br>
+  {%endfor%}
+  
+
+  <hr>
+  </div>
+  </div>
